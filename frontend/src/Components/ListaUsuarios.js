@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import Swal from 'sweetalert2';
 import wallpaper from '../images/wallpaper_pacman.jpg';
 import gatoNoia from '../images/gatonoia-removebg-preview.png';
 
