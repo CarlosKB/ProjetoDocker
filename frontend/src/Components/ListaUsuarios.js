@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Table, Modal, Form } from 'react-bootstrap';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
 import wallpaper from '../images/wallpaper_pacman.jpg';
-import gatoNoia from '../images/gatonoia-removebg-preview.png'
+import gatoNoia from '../images/gatonoia-removebg-preview.png';
 
 const wallpaperStyle = {
     width: '100%',
     height: '100vh',
     objectFit: 'cover',
-    position: 'absolute', // Permite que o wallpaper ocupe a tela inteira
+    position: 'absolute',
     top: 0,
     left: 0,
-    zIndex: 1, // Coloca o wallpaper em um plano inferior
+    zIndex: 1,
 };
 
 const corpoCadastroStyle = {
@@ -23,22 +22,17 @@ const corpoCadastroStyle = {
     alignItems: 'center',
     height: '45vh',
     marginLeft: '600px'
-}
+};
 
 const gatoNoiaStyle = {
     position: 'absolute',
     zIndex: 2,
     marginTop: '965px',
     marginLeft: '1990px'
-}
+};
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
-    const [showModal, setShowModal] = useState(false); // Controla a visibilidade do modal
-    const [selectedUser, setSelectedUser] = useState(null);
-    const [editedLogin, setEditedLogin] = useState('');
-    const [editedSenha, setEditedSenha] = useState('');
-    const [editedId, setEditedId] = useState('');
 
     const GETUsuarios = async () => {
         try {
@@ -64,7 +58,6 @@ const UserList = () => {
         fetchUsers();
     }, []);
 
-
     return (
         <div style={{ position: 'relative' }}>
             <img src={wallpaper} alt="Wallpaper" style={wallpaperStyle} />
@@ -72,7 +65,7 @@ const UserList = () => {
                 <img src={gatoNoia} alt="Gato noia" style={gatoNoiaStyle} />
                 <div className="container">
                     <h2 style={{ color: 'whitesmoke' }}>Lista de Usuários</h2>
-                    <Table striped bordered hover>
+                    <table style={{ color: 'whitesmoke', border: '1px solid whitesmoke' }}>
                         <thead>
                             <tr>
                                 <th style={{ width: '50px'}}>ID</th>
@@ -87,7 +80,7 @@ const UserList = () => {
                                 </tr>
                             ))}
                         </tbody>
-                    </Table>
+                    </table>
                 </div>
             </div>
         </div>
