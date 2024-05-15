@@ -7,7 +7,6 @@ app.use(express.json())
 
 
 app.get('/GETUsuarios', (req, res) => {
-    const query = 'SELECT * FROM Usuario;';
 
     const usuarios = [{
         UsuarioID: 1,
